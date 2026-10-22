@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arnab Das · CSE Graduate, AI & Machine Learning</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+:root{--bg:#F2F5F8;--surface:#FFFFFF;--ink:#14202B;--muted:#55646F;--line:#D5DDE4;--accent:#2B50E6;--accent2:#0F9D8A;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E151C;--surface:#16202A;--ink:#E8EEF3;--muted:#9AA9B5;--line:#263543;--accent:#7C97FF;--accent2:#3DD3BE}}
+:root[data-theme="dark"]{--bg:#0E151C;--surface:#16202A;--ink:#E8EEF3;--muted:#9AA9B5;--line:#263543;--accent:#7C97FF;--accent2:#3DD3BE}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:var(--accent)}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+nav{display:flex;gap:22px;flex-wrap:wrap;padding:20px 0;font-weight:500}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center;padding:36px 0 70px}
+.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;letter-spacing:-.03em}
+.hero p{max-width:46ch;color:var(--muted);font-size:1.1rem;margin:20px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:500;text-decoration:none;border:2px solid var(--accent)}
+.btn.p{background:var(--accent);color:#fff}
+.btn.s{color:var(--accent)}
+:root:not([data-theme="light"]) .btn.p{color:#0E151C}
+.plot{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px}
+.plot svg{width:100%;height:auto;display:block}
+.plot figcaption{font-size:.85rem;color:var(--muted);padding:6px 6px 0}
+.dot{animation:pop .5s both}
+@keyframes pop{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+.dot{transform-box:fill-box;transform-origin:center}
+.line{stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1.4s .9s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.dot,.line{animation:none;stroke-dashoffset:0}}
+section{padding:54px 0;border-top:1px solid var(--line)}
+section h2{font-size:2rem;margin-bottom:22px;letter-spacing:-.02em}
+.about{max-width:62ch}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px}
+.skills h3{font-size:1.1rem;margin-bottom:8px;color:var(--accent)}
+.skills p{margin:0;color:var(--muted)}
+.proj{display:grid;grid-template-columns:1fr 2fr;gap:12px 36px;padding:26px 0;border-bottom:1px solid var(--line)}
+.proj:last-child{border-bottom:0}
+.proj h3{font-size:1.35rem}
+.proj small{display:block;color:var(--accent2);font-weight:500;margin-top:6px}
+.proj p{margin:0 0 8px}
+.tags{color:var(--muted);font-size:.92rem}
+.edu{max-width:62ch}
+.edu strong{font-family:"Bricolage Grotesque",sans-serif;font-size:1.2rem}
+footer{padding:50px 0 60px;border-top:1px solid var(--line)}
+footer h2{font-size:2.2rem;margin-bottom:10px}
+footer p{color:var(--muted);margin:0 0 20px}
+.links{display:flex;gap:20px;flex-wrap:wrap}
+@media (max-width:760px){.hero{grid-template-columns:1fr}.proj{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Main"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+
+<header class="hero">
+<div>
+<h1>Arnab Das</h1>
+<p>Computer Science and Engineering graduate (CGPA 3.81) moving from full-stack web development into AI engineering, machine learning and data science.</p>
+<div class="btns"><a class="btn p" href="#projects">See my projects</a><a class="btn s" href="#contact">Get in touch</a></div>
+</div>
+<figure class="plot" style="margin:0">
+<svg viewBox="0 0 400 300" role="img" aria-label="Scatter plot of data points with a fitted regression line">
+<g stroke="var(--line)" stroke-width="1"><line x1="30" y1="270" x2="380" y2="270"/><line x1="30" y1="270" x2="30" y2="20"/></g>
+<g fill="var(--accent)" id="pts"></g>
+<line class="line" x1="40" y1="245" x2="375" y2="45" stroke="var(--accent2)" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<figcaption>A model fitting its data: the kind of thing I like to build.</figcaption>
+</figure>
+</header>
+
+<section id="about"><h2>About</h2>
+<p class="about">I graduated in Computer Science and Engineering from Port City International University in Chattogram, Bangladesh. I build full-stack web applications end to end, from database design to the user interface. Now I am focusing on Python for machine learning, deep learning and AI engineering, and I am looking for internships and junior roles, remote or on-site, in Bangladesh or abroad.</p></section>
+
+<section id="skills"><h2>Skills</h2>
+<div class="skills">
+<div><h3>AI and machine learning</h3><p>Python for ML and deep learning fundamentals, AI agents, Google Gemini, Python DataFrames and data engineering basics</p></div>
+<div><h3>Languages</h3><p>Python, Java, JavaScript, PHP, C and C++</p></div>
+<div><h3>Web and databases</h3><p>HTML5, CSS3, Tailwind CSS, PHP, MySQL schema design and queries</p></div>
+<div><h3>CS foundations and tools</h3><p>Data structures, algorithms, OOP, system design, Git, GitHub, VS Code</p></div>
+</div></section>
+
+<section id="projects"><h2>Projects</h2>
+<article class="proj"><div><h3>Campus Connect</h3><small>Full-stack web platform, Jan 2025</small></div>
+<div><p>A multi-role university platform for students, alumni and admins. Each role has its own dashboard and permissions, backed by a relational MySQL schema.</p><p>I handled everything myself: database design, PHP back end for login and form handling, a responsive Tailwind CSS interface, and the public page content.</p><p class="tags">PHP · MySQL · JavaScript · Tailwind CSS</p><a href="https://github.com/arnabemon">View on GitHub</a></div></article>
+<article class="proj"><div><h3>Machine learning projects</h3><small>In progress</small></div>
+<div><p>I am working through the AI Engineer Path and building my first data science and ML projects in Python. They will appear here as I finish them.</p><a href="https://github.com/arnabemon">Follow on GitHub</a></div></article>
+</section>
+
+<section id="education"><h2>Education</h2>
+<p class="edu"><strong>B.Sc. in Computer Science and Engineering</strong><br>Port City International University, Chattogram · Apr 2022 to Jul 2026 · CGPA 3.81 / 4.00<br><span style="color:var(--muted)">Coursework: Data Structures, Algorithms, System Design, Artificial Intelligence, Software Engineering, Web Technology</span></p>
+<p class="edu" style="margin-top:22px"><strong>Certifications</strong><br>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate, Dec 2025<br>Gemini Certified Student<br>The AI Engineer Path, Scrimba, Dec 2025<br>Python for Complete Beginners<br>Master Git and GitHub, Beginner to Expert<br>Introduction to GitHub Concepts<br><span style="color:var(--muted)">Languages: Bangla (native), English and Hindi (limited working)</span></p></section>
+
+<footer id="contact"><h2>Let's work together</h2>
+<p>Open to internships and junior roles in AI, machine learning and software development, remote or on-site.</p>
+<div class="links"><a href="mailto:arnabemon242@gmail.com">arnabemon242@gmail.com</a><a href="https://github.com/arnabemon">GitHub</a><a href="https://www.linkedin.com/in/arnab-das-48206b23b">LinkedIn</a></div></footer>
+</div>
+<script>
+(function(){var g=document.getElementById('pts'),s=7,n=34,h='';
+function r(){s=(s*9301+49297)%233280;return s/233280}
+for(var i=0;i<n;i++){var x=45+i*9.6,y=245-(x-40)*0.597+(r()-.5)*70;
+h+='<circle class="dot" style="animation-delay:'+(i*25)+'ms" cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="5"/>'}
+g.innerHTML=h})();
+</script>
+</body>
+</html>
